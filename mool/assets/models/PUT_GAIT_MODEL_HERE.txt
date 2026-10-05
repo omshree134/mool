@@ -1,0 +1,3 @@
+Copy gait_model.tflite from the Abhaya project into this folder.
+The build fails until it's here, because pubspec.yaml lists it as an asset.
+Expected shape: input [1, 128, 9], output [1, 6] (UCI-HAR layout).

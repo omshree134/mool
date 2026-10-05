@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mool-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.11
+      - key: FIREBASE_PROJECT_ID
+        value: moolorg
+      - key: ALLOW_DEV_ANON_AUTH
+        value: "true"

@@ -1,0 +1,29 @@
+tiers:
+  watch:
+    notify:
+      - counsellor
+    ack_hours: 72
+  outreach:
+    notify:
+      - counsellor
+      - nodal_officer
+    ack_hours: 24
+  urgent:
+    notify:
+      - counsellor
+      - nodal_officer
+      - dmhp
+      - sp_office
+    ack_hours: 4
+  crisis:
+    notify:
+      - crisis_desk
+      - nodal_officer
+      - sp_office
+    ack_minutes: 15
+    handoff: "tele_manas_14416"
+
+escalate_if_unacknowledged:
+  counsellor: nodal_officer
+  nodal_officer: dm_office
+  dm_office: state_nodal_officer

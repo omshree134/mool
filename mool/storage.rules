@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// Evidence is write-once: it can be added but never replaced or deleted from
+// the app, so its SHA-256 fingerprint keeps meaning something.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /evidence/{uid}/{file} {
+      allow create: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.size < 50 * 1024 * 1024
+        && request.resource.contentType.matches('audio/.*')
+        && request.resource.metadata.sha256 is string;
+
+      allow read: if request.auth != null && (
+        request.auth.uid == uid ||
+        (request.auth.token.get('role', '') == 'counsellor' &&
+          firestore.get(/databases/(default)/documents/members/$(uid)).data.get('counsellorId', '') == request.auth.uid)
+      );
+
+      allow update, delete: if false;
+    }
+  }
+}

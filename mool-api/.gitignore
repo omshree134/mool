@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.env.local
+firebase_sa.json
+*.log
+.pytest_cache/
+data/synthetic_cohort.csv
+cloudflared.exe
+

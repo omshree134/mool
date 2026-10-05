@@ -1,0 +1,64 @@
+name: mool
+description: "Mool - a quiet place to check in, and to reach support when you need it."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.7.0
+  google_sign_in: ^6.2.2
+  cloud_firestore: ^5.6.12
+  firebase_storage: ^12.4.10
+  cloud_functions: ^5.6.1
+
+  # Sensing (all processed on the phone)
+  permission_handler: ^11.3.1
+  geolocator: ^13.0.1
+  sensors_plus: ^6.1.1
+  tflite_flutter: ^0.11.0
+  pedometer: ^4.0.2
+  flutter_blue_plus: ^1.31.0
+
+  # Safety, evidence, linking
+  record: ^6.2.0
+  path_provider: ^2.1.5
+  mobile_scanner: ^7.2.0
+  flutter_contacts: ^1.1.9+2
+  url_launcher: ^6.3.1
+  flutter_local_notifications: ^18.0.1
+
+  # Utilities
+  shared_preferences: ^2.5.3
+  uuid: ^4.5.3
+  crypto: ^3.0.3
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/gait_model.tflite
+    - assets/icon/app_icon.png
+    - assets/icon/app_icon_foreground.png
+    - assets/icon/app_icon_background.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#284432"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"

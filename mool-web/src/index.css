@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --mool-linen: #F6F3EC;
+    --mool-moss: #5F7A5E;
+    --mool-dusk: #2E4452;
+    --mool-sandrose: #C98B76;
+    --mool-ink: #2B2B28;
+    --mool-mist: #E4E0D5;
+    --mool-signal: #B3543F;
+  }
+
+  body {
+    background-color: var(--mool-linen);
+    color: var(--mool-ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: 'SOFT' 100, 'WONK' 0, 'opsz' 36;
+  }
+}
+
+/* Custom organic topography background pattern without parent opacity bleed */
+.bg-organic-topography {
+  background-color: #F6F3EC;
+  background-image: radial-gradient(rgba(95, 122, 94, 0.18) 1px, transparent 1px), radial-gradient(rgba(95, 122, 94, 0.18) 1px, #F6F3EC 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Subtle focus outline for WCAG AA compliance */
+*:focus-visible {
+  outline: 2px solid var(--mool-moss);
+  outline-offset: 2px;
+}

@@ -1,0 +1,14 @@
+name = "mool-worker"
+main = "src/index.ts"
+compatibility_date = "2024-04-01"
+compatibility_flags = ["nodejs_compat"]
+account_id = "8a6c5984830b8b7bd64abde8a866b8fc"
+
+[triggers]
+crons = ["*/10 * * * *"]
+
+[vars]
+ENVIRONMENT = "production"
+FIREBASE_PROJECT_ID = "moolorg"
+GROQ_MODEL = "qwen/qwen3.8-27b"
+RENDER_URL = "https://mool-api.onrender.com"

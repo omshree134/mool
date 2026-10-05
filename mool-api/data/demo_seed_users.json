@@ -1,0 +1,34 @@
+[
+  {
+    "email": "counsellor@mool.org",
+    "role": "counsellor",
+    "state": "UP",
+    "district": "UP-LKO",
+    "name": "Dr. Sunita Verma",
+    "description": "Lucknow District Psychosocial Counsellor"
+  },
+  {
+    "email": "district_officer@mool.org",
+    "role": "district_officer",
+    "state": "UP",
+    "district": "UP-LKO",
+    "name": "Shri Rajesh Kumar, IAS",
+    "description": "District Magistrate / PoA Nodal Officer (Lucknow)"
+  },
+  {
+    "email": "state_officer@mool.org",
+    "role": "state_officer",
+    "state": "UP",
+    "district": "*",
+    "name": "Ms. Ananya Sharma, IPS",
+    "description": "State SC/ST Protection Cell Coordinator (Uttar Pradesh)"
+  },
+  {
+    "email": "national_officer@mool.org",
+    "role": "national_officer",
+    "state": "*",
+    "district": "*",
+    "name": "Joint Secretary (PoA Division)",
+    "description": "Ministry of Social Justice & Empowerment, GoI"
+  }
+]

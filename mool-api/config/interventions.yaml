@@ -1,0 +1,28 @@
+interventions:
+  - id: witness_protection
+    title: "Witness Protection Scheme (Section 15A)"
+    action: "Initiate formal witness protection application under Section 15A PoA Act & WPS 2018"
+    trigger_rule: "intimidation_within_hours <= 48 and next_hearing_days is not None and next_hearing_days <= 7"
+    reason_template: "Intimidation reported {intimidation_ago} hours ago; Special Court hearing in {hearing_in} days"
+    owner: nodal_officer
+
+  - id: compensation_followup
+    title: "Statutory Relief Disbursement Follow-up"
+    action: "Issue formal notice to District Social Welfare Officer (DSWO) for pending DBT relief instalment"
+    trigger_rule: "compensation_overdue_days is not None and compensation_overdue_days >= 7"
+    reason_template: "Mandatory statutory compensation instalment overdue by {overdue_days} days"
+    owner: counsellor
+
+  - id: psychiatric_referral
+    title: "DMHP / Tele-MANAS Clinical Evaluation"
+    action: "Schedule clinical evaluation via District Mental Health Programme (DMHP) or Tele-MANAS"
+    trigger_rule: "explicit_crisis_flag or (self_report is not None and self_report >= 75.0)"
+    reason_template: "Severe distress indicators or positive screening for acute distress ({trigger_detail})"
+    owner: counsellor
+
+  - id: in_camera_hearing
+    title: "In-Camera Trial & Screen Request"
+    action: "File Section 15A(10) motion for in-camera hearing and visual screen separation from the accused"
+    trigger_rule: "accused_granted_bail and next_hearing_days is not None and next_hearing_days <= 10"
+    reason_template: "Accused released on bail; witness testimony scheduled in {hearing_in} days"
+    owner: nodal_officer

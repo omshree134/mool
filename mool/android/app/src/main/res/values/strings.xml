@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_get_help_name">Get Help</string>
+    <string name="widget_get_help_description">Direct 1-tap emergency access to get help, helplines, and support.</string>
+    <string name="btn_get_help">Get Help</string>
+</resources>

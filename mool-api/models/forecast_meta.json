@@ -1,0 +1,47 @@
+{
+  "model_version": "1.0.0",
+  "feature_cols": [
+    "current_score",
+    "smoothed_score",
+    "slope_7d",
+    "slope_14d",
+    "variability",
+    "days_to_hearing",
+    "days_to_bail_hearing",
+    "days_since_intimidation",
+    "compensation_overdue_days",
+    "missed_contacts_streak",
+    "voice_stress_last",
+    "emotion_fear_last"
+  ],
+  "auc": 0.9101,
+  "accuracy": 0.869,
+  "medians": {
+    "current_score": 57.7,
+    "smoothed_score": 58.2,
+    "slope_7d": -0.21,
+    "slope_14d": -0.03,
+    "variability": 9.11,
+    "days_to_hearing": 28.0,
+    "days_to_bail_hearing": 999.0,
+    "days_since_intimidation": 999.0,
+    "compensation_overdue_days": 0.0,
+    "missed_contacts_streak": 0.0,
+    "voice_stress_last": 57.8,
+    "emotion_fear_last": 0.58
+  },
+  "importances": {
+    "current_score": 51708.17332066708,
+    "days_to_hearing": 51237.17859345044,
+    "days_to_bail_hearing": 14361.74671460797,
+    "voice_stress_last": 12921.0203101149,
+    "smoothed_score": 12305.451801233785,
+    "days_since_intimidation": 4330.162174738789,
+    "variability": 3880.438197751317,
+    "slope_7d": 2759.2159278876898,
+    "emotion_fear_last": 2307.1546783875674,
+    "slope_14d": 1735.4421039686422,
+    "compensation_overdue_days": 430.6362355351448,
+    "missed_contacts_streak": 118.19362895190716
+  }
+}

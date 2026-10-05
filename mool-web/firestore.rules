@@ -1,0 +1,56 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+
+    // Members profile and subcollections (checkins, daily features, distress scores, SOS)
+    match /members/{uid} {
+      allow read, write: if true;
+      match /{sub}/{docId} {
+        allow read, write: if true;
+      }
+    }
+
+    // Guardian documents & pairing
+    match /guardians/{guardianId} {
+      allow read, write: if true;
+      match /{sub}/{docId} {
+        allow read, write: if true;
+      }
+    }
+
+    match /pairingCodes/{code} {
+      allow read, write: if true;
+    }
+
+    match /qrTokens/{id} {
+      allow read, write: if true;
+    }
+
+    match /beneficiaries/{id} {
+      allow read, write: if true;
+    }
+
+    match /checkins/{id} {
+      allow read, write: if true;
+    }
+
+    match /distressEvents/{id} {
+      allow read, write: if true;
+    }
+
+    match /alerts/{id} {
+      allow read, write: if true;
+    }
+
+    match /staff/{uid} {
+      allow read, write: if true;
+    }
+
+    match /auditLogs/{id} {
+      allow read, write: if true;
+    }
+  }
+}
