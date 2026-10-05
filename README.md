@@ -21,33 +21,33 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [Overview & Philosophy](#-overview--philosophy)
-- [Download Mobile App](#-download-mobile-app-android-apk)
-- [System Architecture](#-system-architecture)
-- [AI & Distress Prediction Pipeline](#-ai--distress-prediction-pipeline)
-- [Crisis & SLA Escalation Workflow](#-crisis--sla-escalation-workflow)
-- [Monorepo Structure](#-monorepo-structure)
-- [Core Modules Breakdown](#-core-modules-breakdown)
-  - [1. Mobile Client (`mool`)](#1-mobile-client-mool)
-  - [2. Command Center Portal (`mool-web`)](#2-command-center-portal-mool-web)
-  - [3. Edge Gateway & Router (`mool-worker`)](#3-edge-gateway--router-mool-worker)
-  - [4. AI & ML Microservice (`mool-api`)](#4-ai--ml-microservice-mool-api)
-- [Mathematical & Algorithmic Framework](#-mathematical--algorithmic-framework)
+- [Overview & Philosophy](#overview--philosophy)
+- [Download Mobile App (Android APK)](#download-mobile-app-android-apk)
+- [System Architecture](#system-architecture)
+- [AI & Distress Prediction Pipeline](#ai--distress-prediction-pipeline)
+- [Crisis & SLA Escalation Workflow](#crisis--sla-escalation-workflow)
+- [Monorepo Structure](#monorepo-structure)
+- [Core Modules Breakdown](#core-modules-breakdown)
+  - [1. Mobile Client (mool)](#1-mobile-client-mool)
+  - [2. Command Center Portal (mool-web)](#2-command-center-portal-mool-web)
+  - [3. Edge Gateway & Router (mool-worker)](#3-edge-gateway--router-mool-worker)
+  - [4. AI & ML Microservice (mool-api)](#4-ai--ml-microservice-mool-api)
+- [Mathematical & Algorithmic Framework](#mathematical--algorithmic-framework)
   - [Dynamic 4-Modality Scoring Formula](#dynamic-4-modality-scoring-formula)
   - [Trend Analysis: EWMA & CUSUM](#trend-analysis-ewma--cusum-drift-detection)
   - [LightGBM 14-Day Risk Forecasting](#lightgbm-14-day-risk-forecasting)
-- [SLA Escalation & Intervention Matrix](#-sla-escalation--intervention-matrix)
-- [API Endpoints Reference](#-api-endpoints-reference)
-- [Design System & Trauma-Informed Tokens](#-design-system--trauma-informed-tokens)
-- [Security, Privacy & Legal Compliance](#-security-privacy--legal-compliance)
-- [Installation & Local Setup](#-installation--local-setup)
-- [License & Acknowledgements](#-license--acknowledgements)
+- [SLA Escalation & Intervention Matrix](#sla-escalation--intervention-matrix)
+- [API Endpoints Reference](#api-endpoints-reference)
+- [Design System & Trauma-Informed Tokens](#design-system--trauma-informed-tokens)
+- [Security, Privacy & Legal Compliance](#security-privacy--legal-compliance)
+- [Installation & Local Setup](#installation--local-setup)
+- [License & Acknowledgements](#license--acknowledgements)
 
 ---
 
-## 🌿 Overview & Philosophy
+## Overview & Philosophy
 
 **Mool** (*"मूल"* — meaning *root* or *foundation* in Sanskrit and Hindi) is an AI-powered mental health monitoring, distress forecasting, and crisis escalation ecosystem. It is engineered with strict **trauma-informed care** principles, designed for survivors of atrocities, domestic violence, human rights violations, and vulnerable citizens navigating complex legal and social stressors (such as the SC/ST Prevention of Atrocities Act and criminal justice proceedings).
 
@@ -68,7 +68,7 @@ Traditional mental health apps are clinical, demanding, and surveillant:
 
 ---
 
-## 📱 Download Mobile App (Android APK)
+## Download Mobile App (Android APK)
 
 The compiled, production-ready release APK is available directly in [**GitHub Releases**](https://github.com/omshree134/mool/releases/latest).
 
@@ -83,17 +83,17 @@ The compiled, production-ready release APK is available directly in [**GitHub Re
 
 ---
 
-## 🏛️ System Architecture
+## System Architecture
 
 The platform follows a resilient distributed architecture combining edge routing, a local-first mobile client, a centralized reactive command portal, an ML analytics backend, and telephony infrastructure.
 
 ```mermaid
 flowchart TD
     subgraph Clients["1. Multi-Channel Touchpoints"]
-        A["📱 Flutter App<br/>(Survivors / Offline-First)"]
-        B["💻 Web Portal<br/>(Caseworkers / Responders)"]
-        C["📞 IVRS Telephony<br/>(Feature Phones / Twilio)"]
-        D["💬 WhatsApp & SMS<br/>(Interactive Menu)"]
+        A["Flutter App<br/>(Survivors / Offline-First)"]
+        B["Web Portal<br/>(Caseworkers / Responders)"]
+        C["IVRS Telephony<br/>(Feature Phones / Twilio)"]
+        D["WhatsApp & SMS<br/>(Interactive Menu)"]
     end
 
     subgraph EdgeTier["2. Cloudflare Edge Gateway (mool-worker)"]
@@ -151,7 +151,7 @@ flowchart TD
 
 ---
 
-## 🧠 AI & Distress Prediction Pipeline
+## AI & Distress Prediction Pipeline
 
 The diagram below details the journey of inbound data—from user interaction and silence tracking through multimodal feature extraction, LightGBM forecasting, and human-in-the-loop SLA triage:
 
@@ -210,7 +210,7 @@ flowchart LR
 
 ---
 
-## ⚡ Crisis & SLA Escalation Workflow
+## Crisis & SLA Escalation Workflow
 
 When an acute crisis signal or high-risk legal trigger occurs (such as an intimidation threat 48 hours prior to an accused person's bail hearing), Mool activates an automated, time-bound escalation sequence:
 
@@ -257,11 +257,11 @@ sequenceDiagram
 
 ---
 
-## 📦 Monorepo Structure
+## Monorepo Structure
 
 ```
 Mool/
-├── mool/                   # 📱 Mobile Client (Flutter v3.24+, Android & iOS)
+├── mool/                   # Mobile Client (Flutter v3.24+, Android & iOS)
 │   ├── android/            # Native Android Gradle configuration & permissions
 │   ├── ios/                # Native iOS Runner configuration
 │   ├── lib/
@@ -272,7 +272,7 @@ Mool/
 │   │   └── ui/             # 25+ trauma-informed screens & somatic widgets
 │   └── pubspec.yaml        # Flutter dependencies & assets
 │
-├── mool-web/               # 💻 Web Command Center (React 18 + TypeScript + Vite)
+├── mool-web/               # Web Command Center (React 18 + TypeScript + Vite)
 │   ├── src/
 │   │   ├── components/     # Dashboards, Triage Queue, Case Timeline, Modals
 │   │   │   ├── portal/     # DistressAlertsQueue, BeneficiaryManager, CaseView
@@ -285,7 +285,7 @@ Mool/
 │   ├── vite.config.ts      # Vite build configuration
 │   └── package.json        # Node dependencies & build scripts
 │
-├── mool-worker/            # ⚡ Edge Gateway (Cloudflare Workers + TypeScript)
+├── mool-worker/            # Edge Gateway (Cloudflare Workers + TypeScript)
 │   ├── src/
 │   │   ├── index.ts        # Fast edge routing, reverse proxy, CORS policy
 │   │   ├── crisis.ts       # Zero-latency deterministic crisis lexicon filter
@@ -294,7 +294,7 @@ Mool/
 │   ├── wrangler.toml       # Cloudflare deployment & cron schedule triggers
 │   └── package.json        # Wrangler & edge runtime dependencies
 │
-└── mool-api/               # 🧠 ML & Analytics Microservice (FastAPI + Python 3.10)
+└── mool-api/               # ML & Analytics Microservice (FastAPI + Python 3.10)
     ├── app/
     │   ├── main.py         # FastAPI application entrypoint & middleware
     │   ├── deps.py         # Firebase Admin Token validator & RBAC checks
@@ -312,7 +312,7 @@ Mool/
 
 ---
 
-## 🔍 Core Modules Breakdown
+## Core Modules Breakdown
 
 ### 1. Mobile Client (`mool`)
 Built with Flutter for high accessibility, complete offline autonomy, and local-first encryption:
@@ -353,7 +353,7 @@ FastAPI service orchestrating machine learning inference and clinical workflows:
 
 ---
 
-## 📐 Mathematical & Algorithmic Framework
+## Mathematical & Algorithmic Framework
 
 ### Dynamic 4-Modality Scoring Formula
 
@@ -414,7 +414,7 @@ P(Escalation in 14d) = LightGBM( X_features )
 
 ---
 
-## 🚨 SLA Escalation & Intervention Matrix
+## SLA Escalation & Intervention Matrix
 
 | Tier | Score Range | SLA Acknowledgment Window | Notification Targets | Automated Interventions & Safeguards |
 |:---:|:---:|:---:|---|---|
@@ -438,7 +438,7 @@ Caseworker (L1) ──[SLA Breached]──> District Nodal Officer (L2) ──[S
 
 ---
 
-## 🔌 API Endpoints Reference
+## API Endpoints Reference
 
 The FastAPI microservice exposes fully documented endpoints with interactive Swagger UI at `/docs`:
 
@@ -457,7 +457,7 @@ The FastAPI microservice exposes fully documented endpoints with interactive Swa
 
 ---
 
-## 🎨 Design System & Trauma-Informed Tokens
+## Design System & Trauma-Informed Tokens
 
 Mool avoids aggressive SaaS tropes (pure harsh blacks, neon accents, clinical starkness). The palette is inspired by **soil, roots, and calming daylight**:
 
@@ -477,7 +477,7 @@ Mool avoids aggressive SaaS tropes (pure harsh blacks, neon accents, clinical st
 
 ---
 
-## 🛡️ Security, Privacy & Legal Compliance
+## Security, Privacy & Legal Compliance
 
 1. **BNS Section 72 & POCSO Compliance**:
    - Bharatiya Nyaya Sanhita (BNS) Section 72 prohibits disclosing the identity of victims of certain offenses.
@@ -494,7 +494,7 @@ Mool avoids aggressive SaaS tropes (pure harsh blacks, neon accents, clinical st
 
 ---
 
-## 🚀 Installation & Local Setup
+## Installation & Local Setup
 
 ### Prerequisites
 - **Flutter SDK**: v3.24+
@@ -582,7 +582,7 @@ Access the interactive API documentation at [http://localhost:7860/docs](http://
 
 ---
 
-## 📄 License & Acknowledgements
+## License & Acknowledgements
 
 - **License**: Released under the open-source [**MIT License**](https://opensource.org/licenses/MIT).
 - **Dataset Integration**: Grounded conversational responses utilize the **AIKosh Bharat Mental Health QA (MHQA)** repository.
